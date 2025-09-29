@@ -9,7 +9,7 @@ def load_students(filename='data/students.csv'):
     students = [line.strip().split(',') for line in lines]
     return students
 
-# calculate the average grade
+# calculate the average grades
 def calculate_average_grade(students):
     grades = [int(s[2]) for s in students]
     return sum(grades) / len(grades)

@@ -16,7 +16,7 @@ def load_csv(filename='data/students.csv'):
     students = [line.strip().split(',') for line in lines]
     return students
 
-# analyze student data and return results in a dictionary
+# analyze student data
 def analyze_data(students):
     grades = [int(s[2]) for s in students]  # all grades as integers
 
