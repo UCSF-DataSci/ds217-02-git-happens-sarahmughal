@@ -5,7 +5,7 @@ echo "set up project environment"
 mkdir -p src data output
 echo "create directories"
 
-# create sample students.csv (8+)
+# create sample students.csv
 cat > data/students.csv <<EOL
 name,age,grade,subject
 alex,15,85,math
