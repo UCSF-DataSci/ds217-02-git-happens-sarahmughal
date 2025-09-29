@@ -1,0 +1,4 @@
+basic analysis report
+total students: 8
+average grade: 86.0
+math students: 3

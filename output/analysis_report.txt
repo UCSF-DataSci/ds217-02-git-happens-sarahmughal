@@ -1,3 +1,0 @@
-Total students: 8
-Average grade: 86.0
-Math students: 3

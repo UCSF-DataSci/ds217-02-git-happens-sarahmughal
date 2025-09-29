@@ -5,35 +5,21 @@ echo "set up project environment"
 mkdir -p src data output
 echo "create directories"
 
-# create .gitignore
-cat > .gitignore <<EOL
-__pycache__/
-*.pyc
-output/
-EOL
-echo "create .gitignore"
-
-# create requirements.txt
-cat > requirements.txt <<EOL
-# no external packages required
-EOL
-echo "create requirements.txt"
-
-# create sample students.csv (8+ records)
+# create sample students.csv (8+)
 cat > data/students.csv <<EOL
 name,age,grade,subject
-george,15,85,math
-hannah,14,90,science
-ian,16,78,history
-jane,15,92,english
-gal,16,88,math
-ariel,14,76,science
-kathy,15,84,history
-leo,16,95,math
+alex,15,85,math
+bella,14,90,science
+carlos,16,78,history
+dina,15,92,english
+emil,16,88,math
+fatima,14,76,science
+henry,15,84,history
+isla,16,95,math
 EOL
 echo "create students.csv"
 
-# create Python template files
+# create python template files
 cat > src/data_analysis.py <<EOL
 # data_analysis.py
 # TODO: implement main entry point
@@ -51,5 +37,4 @@ cat > src/data_analysis_functions.py <<EOL
 # TODO: add helper functions here
 EOL
 
-echo "python template files created"
-echo "project environment setup complete!"
+echo "setup_project.sh complete!"
