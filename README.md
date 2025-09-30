@@ -1,4 +1,4 @@
-# DataSci Week 02 Integration Project
+# DataSci Week 02 Integration Project - Sarah Mughal
 
 ## Project Overview
 This project demonstrates integration of Git workflows, CLI automation, and Python data processing.
