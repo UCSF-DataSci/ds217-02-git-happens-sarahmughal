@@ -1,9 +1,9 @@
-# DataSci Week 02 Integration Project - Sarah Mughal
+# datasci week 2 integration project - sarah mughal
 
-## Project Overview
-This project demonstrates integration of Git workflows, CLI automation, and Python data processing.
+## project overview
+this project demonstrates integration of git workflows, CLI automation, and python data processing.
 
-## Project Structure
+## project structure
 ```
 datasci-week02-integration/
 ├── README.md
@@ -22,20 +22,20 @@ datasci-week02-integration/
 
 ```
 
-## Features
-- **Project Scaffold**: Automated project setup with `setup_project.sh`
-- **Data Processing**: Python scripts for student grade analysis
-- **Git Workflow**: Feature branch development and merging
+## features
+- **project scaffold**: automated project setup with `setup_project.sh`
+- **data processing**: python scripts for student grade analysis
+- **git workflow**: feature branch development and merging
 
-## Usage
-1. Run `./setup_project.sh` to create project structure
-2. Execute `python src/data_analysis.py` for basic analysis
-3. Run `python src/data_analysis_functions.py` for advanced analysis
+## usage
+1. run `./setup_project.sh` to create project structure
+2. execute `python src/data_analysis.py` for basic analysis
+3. run `python src/data_analysis_functions.py` for advanced analysis
 
-## Git Workflow
-| Branch | Purpose | Status |
+## git workflow
+| branch | purpose | status |
 |--------|---------|--------|
-| main | Production code | Active |
-| feature/project-scaffold | CLI automation | Merged |
-| feature/data-processing | Python analysis | Merged |
+| main | production code | active |
+| feature/project-scaffold | CLI automation | merged |
+| feature/data-processing | python analysis | merged |
 ```
