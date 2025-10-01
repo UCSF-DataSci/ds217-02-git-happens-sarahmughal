@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "set up project environment"
+echo "setting up project environment..."
 
 # create directories
 mkdir -p src data output
