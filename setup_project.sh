@@ -7,8 +7,13 @@ echo "directories created"
 
 # create .gitignore
 cat > .gitignore << 'EOF'
+# python
 __pycache__/
 *.pyc
+.venv/
+
+# mac os files
+.DS_store
 EOF
 echo ".gitignore created"
 
