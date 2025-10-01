@@ -22,14 +22,14 @@ echo "requirements.txt created"
 # create sample students.csv
 cat > data/students.csv << 'EOF'
 name,age,grade,subject
-alex,15,85,math
-bella,14,90,science
-carlos,16,78,history
-dina,15,92,english
-emil,16,88,math
-fatima,14,76,science
-henry,15,84,history
-isla,16,95,math
+Alice,15,85,Math
+Bella,14,90,Science
+Carlos,16,78,History
+Dina,15,92,English
+Emil,16,88,Math
+Fatima,14,76,Science
+Henry,15,84,History
+Isla,16,95,Math
 EOF
 echo "students.csv created"
 
