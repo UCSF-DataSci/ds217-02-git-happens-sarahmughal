@@ -5,8 +5,21 @@ echo "set up project environment"
 mkdir -p src data output
 echo "create directories"
 
+# create .gitignore
+cat > .gitignore << 'EOF'
+__pycache__/
+*.pyc
+EOF
+echo ".gitignore created"
+
+# create requirements.txt
+cat > requirements.txt << 'EOF'
+# no external packages required
+EOF
+echo "requirements.txt created"
+
 # create sample students.csv
-cat > data/students.csv <<EOL
+cat > data/students.csv << 'EOF'
 name,age,grade,subject
 alex,15,85,math
 bella,14,90,science
@@ -16,13 +29,13 @@ emil,16,88,math
 fatima,14,76,science
 henry,15,84,history
 isla,16,95,math
-EOL
-echo "create students.csv"
+EOF
+echo "students.csv created"
 
-# create python template files
-cat > src/data_analysis.py <<EOL
+# create python template for basic analysis
+cat > src/data_analysis.py << 'EOF'
 # data_analysis.py
-# TODO: implement main entry point
+# TODO: add basic data analysis code here
 
 def main():
     # TODO: implement program logic
@@ -30,11 +43,19 @@ def main():
 
 if __name__ == "__main__":
     main()
-EOL
+EOF
 
-cat > src/data_analysis_functions.py <<EOL
+# create python template for advanced analysis
+cat > src/data_analysis_functions.py << 'EOF'
 # data_analysis_functions.py
-# TODO: add helper functions here
-EOL
+# TODO: add advanced data analysis code here
+
+def main():
+    # TODO: implement program logic
+    pass
+
+if __name__ == "__main__":
+    main()
+EOF
 
 echo "setup_project.sh complete!"
