@@ -18,8 +18,7 @@ datasci-week02-integration/
 ├── data/
 │   ├── students.csv
 └── output/
-    └── basic_analysis_report.txt
-    └── advanced_analysis_report.txt
+    └── analysis_report.txt
 
 ```
 
