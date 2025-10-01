@@ -14,8 +14,8 @@ echo ".gitignore created"
 
 # create requirements.txt
 cat > requirements.txt << 'EOF'
-# core python packages (built-in, no external dependencies required)
-# testing framework: pytest>=7.0.0
+# no external packages required
+pytest>=7.0.0
 EOF
 echo "requirements.txt created"
 
