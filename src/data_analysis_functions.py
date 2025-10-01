@@ -2,96 +2,90 @@
 
 import os
 
-# check file type
-def load_data(filename='data/students.csv'):
-    if filename.endswith('.csv'):
-        return load_csv(filename)
-    else:
-        raise ValueError('unsupported file format')
 
-# load csv data just like the basic script
-def load_csv(filename='data/students.csv'):
-    with open(filename, 'r') as f:
-        lines = f.readlines()[1:] 
-    students = [line.strip().split(',') for line in lines]
-    return students
+# load csv data, skip header row
+def load_data(filename="data/students.csv"):
+    with open(filename, "r", encoding="utf-8") as f:
+        lines = f.readlines()[1:]
+    return [line.strip().split(",") for line in lines]
 
-# analyze student data
+
+# analyze all statistics
 def analyze_data(students):
-    grades = [int(s[2]) for s in students]  # all grades as integers
+    grades = [int(s[2]) for s in students]
 
-    # calculate average, highest, and lowest
-    average = sum(grades) / len(grades)
+    total = len(students)
+    average = sum(grades) / total
     highest = max(grades)
     lowest = min(grades)
 
     # count students by subject
     subjects = {}
     for s in students:
-        subject = s[3].strip()
-        if subject in subjects:
-            subjects[subject] += 1
-        else:
-            subjects[subject] = 1
+        subject = s[3].strip().lower()
+        subjects[subject] = subjects.get(subject, 0) + 1
 
-    # get grade distribution (a, b, c, d, f)
-    distribution = analyze_grade_distribution(grades)
+    # get grade distribution
+    distribution = analyze_grade_distribution(grades, total)
 
-    # store everything in a dictionary
-    results = {
-        'total': len(students),
-        'average': average,
-        'highest': highest,
-        'lowest': lowest,
-        'subjects': subjects,
-        'distribution': distribution
+    return {
+        "total": total,
+        "average": average,
+        "highest": highest,
+        "lowest": lowest,
+        "subjects": subjects,
+        "distribution": distribution,
     }
-    return results
 
-# make grade distribution with counts and percentages
-def analyze_grade_distribution(grades):
-    dist = {'A': 0, 'B': 0, 'C': 0, 'D': 0, 'F': 0}
+
+# make grade distribution with percentages
+def analyze_grade_distribution(grades, total):
+    dist = {"A": 0, "B": 0, "C": 0, "D": 0, "F": 0}
     for g in grades:
         if g >= 90:
-            dist['A'] += 1
+            dist["A"] += 1
         elif g >= 80:
-            dist['B'] += 1
+            dist["B"] += 1
         elif g >= 70:
-            dist['C'] += 1
+            dist["C"] += 1
         elif g >= 60:
-            dist['D'] += 1
+            dist["D"] += 1
         else:
-            dist['F'] += 1
-    return dist
+            dist["F"] += 1
 
-# save the advanced analysis results to a file
-def save_results(results, filename='output/advanced_analysis_report.txt'):
-    os.makedirs(os.path.dirname(filename), exist_ok=True)  
-    with open(filename, 'w') as f: 
+    return {
+        grade: f"{count} ({(count / total) * 100:.1f}%)"
+        for grade, count in dist.items()
+    }
+
+
+# save advanced report to output file
+def save_results(results, filename="output/analysis_report.txt"):
+    os.makedirs(os.path.dirname(filename), exist_ok=True)
+    with open(filename, "w", encoding="utf-8") as f:
         f.write("advanced analysis report\n")
         f.write(f"total students: {results['total']}\n")
         f.write(f"average grade: {results['average']:.1f}\n")
         f.write(f"highest grade: {results['highest']}\n")
-        f.write(f"lowest grade: {results['lowest']}\n")
+        f.write(f"lowest grade: {results['lowest']}\n\n")
 
-        f.write("\nstudents by subject:\n")
-        for subject, count in results['subjects'].items():
+        f.write("students by subject:\n")
+        for subject, count in results["subjects"].items():
             f.write(f"- {subject}: {count}\n")
 
         f.write("\ngrade distribution:\n")
-        total = results['total']
-        for grade, count in results['distribution'].items():
-            percent = (count / total) * 100
-            f.write(f"- {grade}: {count} ({percent:.1f}%)\n")
+        for grade, value in results["distribution"].items():
+            f.write(f"- {grade}: {value}\n")
 
-    print(f"results saved to {filename}")
+    print(f"report saved to {filename}")
 
-# main function to run the whole workflow
+
+# main workflow
 def main():
-    students = load_data('data/students.csv')
+    students = load_data()
     results = analyze_data(students)
-    save_results(results, 'output/advanced_analysis_report.txt')
+    save_results(results)
 
-# only run main if this file is executed directly
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()

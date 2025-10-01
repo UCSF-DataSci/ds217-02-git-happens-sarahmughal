@@ -3,7 +3,7 @@ echo "set up project environment"
 
 # create directories
 mkdir -p src data output
-echo "create directories"
+echo "directories created"
 
 # create .gitignore
 cat > .gitignore << 'EOF'
