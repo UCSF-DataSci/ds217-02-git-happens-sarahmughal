@@ -1,5 +1,8 @@
 # data_analysis.py (basic analysis script)
 
+import os
+
+
 # load csv data, skip header row
 def load_students(filename="data/students.csv"):
     with open(filename, "r", encoding="utf-8") as f:
