@@ -14,7 +14,7 @@ echo ".gitignore created"
 
 # create requirements.txt
 cat > requirements.txt << 'EOF'
-# no external packages required
+# core python packages (built-in, no external dependencies required)
 EOF
 echo "requirements.txt created"
 
