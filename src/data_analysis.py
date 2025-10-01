@@ -29,9 +29,9 @@ def generate_report(students):
 
     report = []
     report.append("basic analysis report")
-    report.append(f"total students: {total}")
-    report.append(f"average grade: {avg:.1f}")
-    report.append(f"math students: {math_count}")
+    report.append(f"Total Students: {total}")
+    report.append(f"Average Grade: {avg:.1f}")
+    report.append(f"Math Students: {math_count}")
     return "\n".join(report)
 
 
@@ -39,7 +39,8 @@ def generate_report(students):
 def save_report(report, filename="output/analysis_report.txt"):
     os.makedirs(os.path.dirname(filename), exist_ok=True)
     with open(filename, "w", encoding="utf-8") as f:
-        f.write(report + "\n")
+        f.write("Analysis Report (Basic)\n")
+
     print(f"report saved to {filename}")
 
 

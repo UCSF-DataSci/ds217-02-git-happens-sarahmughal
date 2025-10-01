@@ -1,16 +1,16 @@
-advanced analysis report
-total students: 8
-average grade: 86.0
-highest grade: 95
-lowest grade: 76
+Analysis Report (Advanced)
+Total Students: 8
+Average Grade: 86.0
+Highest Grade: 95
+Lowest Grade: 76
 
-students by subject:
-- math: 3
-- science: 2
-- history: 2
-- english: 1
+Students by Subject:
+- Math: 3
+- Science: 2
+- History: 2
+- English: 1
 
-grade distribution:
+Grade Distribution:
 - A: 3 (37.5%)
 - B: 3 (37.5%)
 - C: 2 (25.0%)

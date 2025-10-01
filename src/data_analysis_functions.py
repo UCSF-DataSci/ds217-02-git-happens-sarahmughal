@@ -22,7 +22,7 @@ def analyze_data(students):
     # count students by subject
     subjects = {}
     for s in students:
-        subject = s[3].strip().lower()
+        subject = s[3].strip()
         subjects[subject] = subjects.get(subject, 0) + 1
 
     # get grade distribution
@@ -63,17 +63,18 @@ def analyze_grade_distribution(grades, total):
 def save_results(results, filename="output/analysis_report.txt"):
     os.makedirs(os.path.dirname(filename), exist_ok=True)
     with open(filename, "w", encoding="utf-8") as f:
-        f.write("advanced analysis report\n")
-        f.write(f"total students: {results['total']}\n")
-        f.write(f"average grade: {results['average']:.1f}\n")
-        f.write(f"highest grade: {results['highest']}\n")
-        f.write(f"lowest grade: {results['lowest']}\n\n")
+        f.write("Analysis Report (Advanced)\n")
 
-        f.write("students by subject:\n")
+        f.write(f"Total Students: {results['total']}\n")
+        f.write(f"Average Grade: {results['average']:.1f}\n")
+        f.write(f"Highest Grade: {results['highest']}\n")
+        f.write(f"Lowest Grade: {results['lowest']}\n\n")
+
+        f.write("Students by Subject:\n")
         for subject, count in results["subjects"].items():
             f.write(f"- {subject}: {count}\n")
 
-        f.write("\ngrade distribution:\n")
+        f.write("\nGrade Distribution:\n")
         for grade, value in results["distribution"].items():
             f.write(f"- {grade}: {value}\n")
 
